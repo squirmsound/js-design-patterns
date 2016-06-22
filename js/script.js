@@ -1,4 +1,9 @@
-var o = {
+var com = com || {};
+com.squirm = com.squirm || {};
+com.squirm.jsdp = com.squirm.jsdp || {};
+com.squirm.jsdp.chat = com.squirm.jsdp.chat || {};
+
+com.squirm.jsdp.chat = {
   leadself: 'Me: ',
 	leadcomputer: "PC: ",
 	aSaid: ["This :s a Cyber Chat"],
