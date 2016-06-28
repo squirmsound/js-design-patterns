@@ -1,4 +1,4 @@
-body {margin:0; padding:0; background-color:#96CA2D; color:#000000; font-family: Oswald}
+body {margin:0; padding:0; background-color:#292929; color:#292929; font-family: Oswald}
 a {text-decoration:none;}
 a img {border:none;}
 h1 {font-size:45px;}
@@ -7,7 +7,7 @@ h3 {font-size:30px;}
 a {color:#4BB5C1;}
 a:hover {color:#EDF7F2;}
 
-.article {width:900px; margin:100px auto 100px auto; text-align:center; background:#B5E655;}
+.article {width:900px; margin:100px auto 100px auto; text-align:center; background:#292929;}
 .article h1 {width:100%; padding:0; margin:0; float:left;}
 .article p {width:100%; padding:0; margin:5px 0 0; float:left; font-size:13px;}
 
@@ -21,12 +21,12 @@ a:hover {color:#EDF7F2;}
 
 }
 .article li{margin:10px}
-.article li span{background:yellow; color:#D93232; margin-left:10px;}
+.article li span{background:#292929; color:#ffffff; margin-left:10px;}
 
 .article .advert{
 	height:200px;
-	background:#FD7400;
-	color:white;
+	background:#ffffff;
+	color:#292929;
 	font-size: 30px;
 	padding-top:50px;
 }
@@ -41,8 +41,8 @@ a:hover {color:#EDF7F2;}
 	background:red;
 	position: absolute;
 }
-.footer {background:#FFE11A; width:98%; padding:1%; position:fixed; bottom:0;}
-.footer span {float:right; font-size:20px; color:#D93232; margin-left:5px;}
+.footer {background:#292929; width:98%; padding:1%; position:fixed; bottom:0;}
+.footer span {float:right; font-size:20px; color:#ffffff; margin-left:5px;}
 .footer a {height:30px; float:left; margin-right:15px; display:block; background-position:top left; background-repeat:no-repeat; cursor:default;}
 .footer a:hover {background-position:left -30px;}
 .html5 {width:21px; background:url(../img/html.png);}
