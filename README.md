@@ -1,14 +1,14 @@
 # Module Reveal Pattern
 
-* See how we treat private and public members differently
-* Ensure private members can't interact with public ones
-* Add complexity to our core structure
+* Use the Module concept to make everything private
+* Conditionally add elements to the global scope
+* Send things from the global scope into our Mega Module
 
 ## Difference
 
-* Reveal process separate from the creation process
+*
 
 ## Negatives
 
-* This process is final
-* No access to private variables
+*
+*
