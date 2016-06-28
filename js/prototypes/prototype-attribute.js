@@ -11,7 +11,7 @@
 // this other object that is the object’s prototype attribute or “parent.”
 
 // All objects have attributes just like object properties have attributes.
-// And the object attributes are prototype, class, and extensible attributes.
+// And the object attribu tes are prototype, class, and extensible attributes.
 // It is this prototype attribute that we are discussing in this second example.
 
 // Also note that the __proto__ “pseudo” property contains an object’s prototype
