@@ -1,4 +1,4 @@
-(function () {
+(function (win, doc, $) {
   var chatModule = (function () {
     // private
     var _leadself = 'Me: ',
@@ -49,9 +49,16 @@
       };
     })();
 
-    $(document).ready(function() {
+    $(doc).ready(function() {
       chatModule.talk('init');
       chatModule.replyYesNo();
       chatModule.saySassyStuff();
     });
-})();
+    // Create a public API in the window
+    // Control the access to the global scope based on a condition
+    if(!win.chatModule) {
+      win.chatModule = chatModule;
+    }
+})(window, document, jQuery);
+
+console.log(window.chatModule);
