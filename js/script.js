@@ -1,4 +1,6 @@
-var chatModule = (functon (){
+var chatModule = (function () {
+
+  // private
   var leadself = 'Me: ',
 	leadcomputer = "PC: ",
 	aSaid = ["This :s a Cyber Chat"],
@@ -11,12 +13,13 @@ var chatModule = (functon (){
 		"She laughed, and the desert sang.",
 		"You’ve got about as much charm as a dead slug."];
 
+  // return API for public access
   function echo(msg) {
     aSaid.push('<div>' + msg + '</div>');
 
     var aSaidLength = aSaid.length,
-      start= Math.max(aSaidLength - 6, 0),
-      out = "";
+      start= Math.max( aSaidLength - 6, 0),
+      out = '';
 
     for (var i = start; i < aSaidLength; i++) {
       out += aSaid[i];
@@ -25,6 +28,7 @@ var chatModule = (functon (){
     $('#talk span').text(msg);
   }
 
+  // return API for public access
   return {
     talk: function(msg) {
       echo(leadself + msg);
@@ -32,12 +36,16 @@ var chatModule = (functon (){
     replyYesNo: function (msg) {
       var msg = Math.random() > 0.5 ? msgYes : msgNo;
       echo(leadcomputer + msg);
-
     },
     saySassyStuff: function () {
       var msg = aSassyStuff[ Math.floor(Math.random() * aSassyStuff.length)];
       echo(leadcomputer + msg);
-    }
-  }
-
+    },
+  };
 })();
+
+$(document).ready(function() {
+  chatModule.talk('init');
+  chatModule.replyYesNo();
+  chatModule.saySassyStuff();
+});
