@@ -1,8 +1,11 @@
-# Module Reveal Pattern
+# Creational Design Patterns
 
-* Use the Module concept to make everything private
-* Conditionally add elements to the global scope
-* Send things from the global scope into our Mega Module
+* The Singleton Design Pattern
+* The Factory Design Pattern
+* The Abstract Factory Design Pattern
+* The Builder Design Pattern
+* The Builder Design Pattern 2
+* The Prototype Design Pattern
 
 ## Difference
 

@@ -13,8 +13,8 @@ a:hover {color:#EDF7F2;}
 
 .article a.first{margin-left:390px;}
 .article a.sec{margin-left:305px;}
-.article .info{ 
-	text-align: justify; 
+.article .info{
+	text-align: justify;
 	margin-left: auto;
   margin-right: auto;
   width: 400px;
@@ -34,7 +34,13 @@ a:hover {color:#EDF7F2;}
 .article .advert div{
 	font-size: 20px;
 }
-
+.circle {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background:red;
+	position: absolute;
+}
 .footer {background:#FFE11A; width:98%; padding:1%; position:fixed; bottom:0;}
 .footer span {float:right; font-size:20px; color:#D93232; margin-left:5px;}
 .footer a {height:30px; float:left; margin-right:15px; display:block; background-position:top left; background-repeat:no-repeat; cursor:default;}
