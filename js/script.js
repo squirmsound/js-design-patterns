@@ -1,72 +1,64 @@
-(function(win, $){
-  var CircleGeneratorSingleton = (function() {
-    // local internal reference
-    var instance;
+(function (win, doc, $) {
+  var chatModule = (function () {
+    // private
+    var _leadself = 'Me: ',
+    _leadcomputer = "PC: ",
+    _aSaid = ["This :s a Cyber Chat"],
+    _msgYes = "Yes, that's a great idea.",
+    _msgNo = "No, that must be a mistake.",
+    _aSassyStuff = [
+      "Like mold on books, grow myths on history.",
+      "She moved like a poem and smiled like a sphinx.",
+      "As long as we don’t die, this is gonna be one hell of a story.",
+      "She laughed, and the desert sang.",
+      "You’ve got about as much charm as a dead slug."];
 
-    // intiate the object
-    function init() {
-      // set all properties, all functions are going to live inside of here
-      // because we dont want them to execute and start until we are ready to
-      // create them and return them.
+      // return API for public access
+      function _echo(msg) {
+        _aSaid.push('<div>' + msg + '</div>');
 
-      var _aCircle = [],
-      _stage = $('.advert');
+        var aSaidLength = _aSaid.length,
+        start= Math.max( aSaidLength - 6, 0),
+        out = '';
 
-      function _position(circle, left, top) {
-        circle.css('left', left);
-        circle.css('top', top);
-        return circle;
-      }
-
-      function create(left, top) {
-        var circle = $('<div class="circle"></div');
-        _position(circle, left, top);
-        return circle;
-      }
-
-      function add(circle) {
-        _stage.append(circle);
-        _aCircle.push(circle);
-      }
-
-      function index() {
-        return _aCircle.length;
-      }
-
-      // Return public API
-      return {
-        index: index,
-        create: create,
-        add: add,
-      }
-    }
-
-    return {
-      getInstance: function() {
-        if(!instance) {
-          instance = init();
+        for (var i = start; i < aSaidLength; i++) {
+          out += _aSaid[i];
         }
-        return instance;
+        $('.advert').html(out);
+        $('#talk span').text(msg);
       }
-    }
-  })();
-  $(win.document).ready(function() {
-    $('.advert').click(function(e) {
-      var circleGenerator = CircleGeneratorSingleton.getInstance();
-      var circle = circleGenerator.create(e.pageX - 25, e.pageY - 25);
-      // registered and set on the page
-      circleGenerator.add(circle);
-    });
 
-    $(document).keypress(function(e){
-      if(e.key =='a'){
-        var circleGenerator = CircleGeneratorSingleton.getInstance();
-        var circle = circleGenerator.create(
-          Math.floor(Math.random() * 600),
-          Math.floor(Math.random() * 600)
-        );
-        circleGenerator.add(circle);
+      function talk(msg) {
+        _echo(_leadself + msg);
       }
-    })
-  });
-})(window, jQuery);
+
+      function replyYesNo(msg) {
+        var msg = Math.random() > 0.5 ? _msgYes : _msgNo;
+        _echo(_leadcomputer + msg);
+      }
+
+      function saySassyStuff() {
+        var msg = _aSassyStuff[ Math.floor(Math.random() * _aSassyStuff.length)];
+        _echo(_leadcomputer + msg);
+      }
+      // return API for public access
+      return {
+        talk: talk,
+        replyYesNo: replyYesNo,
+        saySassyStuff: saySassyStuff,
+      };
+    })();
+
+    $(doc).ready(function() {
+      chatModule.talk('init');
+      chatModule.replyYesNo();
+      chatModule.saySassyStuff();
+    });
+    // Create a public API in the window
+    // Control the access to the global scope based on a condition
+    if(!win.chatModule) {
+      win.chatModule = chatModule;
+    }
+})(window, document, jQuery);
+
+console.log(window.chatModule);
