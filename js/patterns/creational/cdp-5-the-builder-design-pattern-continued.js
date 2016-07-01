@@ -80,9 +80,9 @@
       _cf.register('red', RedCircleBuilder);
       _cf.register('blue', BlueCircleBuilder);
 
-      function _position(item, left, top) {
-        item.css('left', left);
-        item.css('top', top);
+      function _position(circle, left, top) {
+        circle.css('left', left);
+        circle.css('top', top);
       }
 
       function create(left, top, type) {
