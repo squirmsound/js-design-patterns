@@ -1,4 +1,4 @@
-body {margin:0; padding:0; background-color:#292929; color:#292929; font-family: Oswald}
+body {margin:0; padding:0; background-color:#292929; color:#292929; font-family: DIN}
 a {text-decoration:none;}
 a img {border:none;}
 h1 {font-size:45px;}
@@ -41,6 +41,15 @@ a:hover {color:#EDF7F2;}
 	background:red;
 	position: absolute;
 }
+
+.circle.primary {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background:blue;
+	position: absolute;
+}
+
 .footer {background:#292929; width:98%; padding:1%; position:fixed; bottom:0;}
 .footer span {float:right; font-size:20px; color:#ffffff; margin-left:5px;}
 .footer a {height:30px; float:left; margin-right:15px; display:block; background-position:top left; background-repeat:no-repeat; cursor:default;}
