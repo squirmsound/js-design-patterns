@@ -1,5 +1,4 @@
-// A constructor is a function used for initializing new objects, and
-// you use the new keyword to call the constructor.
+// A constructor is a function used for initializing new objects, and you use the new keyword to call the constructor.
 
 function Account () {
 }

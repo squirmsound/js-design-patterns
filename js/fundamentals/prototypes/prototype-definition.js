@@ -1,9 +1,25 @@
-// Objects in Javascript have an internal property, denoted
-// in the specification as [[Prototype]], which is simply
-// a reference to another object.
+// NOTE: Javascripts inheritance system that allows for extending on the various data types
 
-// Almost all objects are given a non-null value for this property,
-// at the time of their creation.
+// NOTE: i know that in js objects have an internal property called the [[Prototype]], which is fundamentally a reference to another object.
+
+// NOTE: so with that, each object is a prototype of another obj and inherits the properties defined in the prototype
+
+// NOTE: The prototype property is used primarily for inheritance;
+// you add methods and properties on a function’s prototype
+// property to make those methods and properties available to
+// instances of that function.
+
+// NOTE: This prototype property is not enumerable; that is, it isn’t
+// accessible in a for/in loop. But Firefox and most versions of
+// Safari and Chrome have a __proto__ “pseudo” property
+// (an alternative syntax) that allows you to access an object’s prototype property.
+
+
+// Objects in Javascript have an internal property, denoted in the specification as [[Prototype]], which is simply a reference to another object.
+
+// Each object is a prototype of another object, and inherits the properties defined in the prototype
+
+// Almost all objects are given a non-null value for this property, at the time of their creation.
 
 
 
