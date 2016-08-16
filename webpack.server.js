@@ -40,7 +40,7 @@ function createConfig(isDebug) {
 		module: {
 			loaders: [
 				{ test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-				{ test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
+				// { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
 			]
 		},
 		externals: [ignoreNodeModules],

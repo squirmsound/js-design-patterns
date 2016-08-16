@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		title Verify a Prime Number
+		link(rel='stylesheet prefetch', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+	body
+		.container
+			h1 Verify a prime number
+			p
+				| Question: How would you verify a prime number?
+			p
+				| Answer: a prime number is only divisible by itself and 1
+			hr
+			form.form
+				.row
+					.col-sm-12
+						label(for='prime') Enter a number
+						input#prime(type='text', name='prime')
+						a#testNumber.btn.btn-default Test
+			.row
+				.col-sm-12
+					#result
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js')
+		script(src='js/index.js')
