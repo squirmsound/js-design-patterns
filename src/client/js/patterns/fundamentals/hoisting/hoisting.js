@@ -16,6 +16,28 @@ test();
 // undefined
 // 2
 
+// BAD
+// -----------------------------
+console.log('VALUE', value) // can't use variable before initialization
+value = 5;
+var value;
+
+
+// Hoisting takes over
+// -----------------------------
+value = 5; // site of initialization is important
+console.log('VALUE', value)
+var value; // declaration is not
+
+
+// BEST PRACTICE
+// -----------------------------
+var value = 5;
+console.log('VALUE', value)
+
+
+// DEFINITIONS
+// -----------------------------
 
 // Hoisting is an easy to understand, but often overlooked nuance of the JavaScript language.
 
