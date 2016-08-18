@@ -1,0 +1,8 @@
+[include]
+/src/client/**/*.js
+
+[ignore]
+.*/__tests__/.*
+.*/build/.*
+.*/public/.*
+.*\.ignore\.js

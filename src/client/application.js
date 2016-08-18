@@ -1,3 +1,9 @@
+const integers = require('integers');
+const iQ = require('iQ');
+const prices = require('prices');
+const services = require('services');
+
+// @flow
 import './application.scss';
 
 import * as services from './services';
