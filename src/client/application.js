@@ -1,13 +1,8 @@
-const integers = require('integers');
-const iQ = require('iQ');
-const prices = require('prices');
-const services = require('services');
-
 // @flow
 import './application.scss';
 
 import * as services from './services';
-// import * as arrays from './js/patterns/fundamentals/arrays';
+import * as arrays from './js/patterns/fundamentals/arrays';
 import * as iQ from './js/studies';
 import { prices } from './js/studies/data/prices';
 import { integers } from './js/studies/data/integers';
@@ -17,7 +12,7 @@ import { integers } from './js/studies/data/integers';
 // ----------------------------------------
 services.server.emitAction$('login', { username: 'foo', password: 'bar' })
   .subscribe(user => {
-      console.log("We're logged in: " + user);
+      // console.log("We're logged in: " + user);
     }, error => {
       console.error(error);
     });
@@ -40,25 +35,41 @@ services.server.status$.subscribe(
 // ----------------------------------------
 services.socket.connect();
 
+// Mock Data
+// ----------------------------------------
+const priceList = prices;
+
+
 // Array Studies
 // ----------------------------------------
-// arrays.arrForLoop.forLoop();
-// arrays.arrForEach.forEach();
-// arrays.arrProjectArr.projectArr();
-// arrays.arrProjectMap.projectMap();
-// arrays.arrForEachFilter.fitlerArray();
-// arrays.arrFilterMapChain.filterMapChain();
-// arrays.arrQueryingTrees.queryingTrees();
+arrays.arrForLoop();
+arrays.arrForEach();
+arrays.arrProjectArr();
+arrays.arrProjectMap();
+arrays.arrForEachFilter();
+arrays.arrFilterMapChain();
+arrays.arrQueryingTrees();
 // arrays.arrMapConcatAllQuery.mapConcatAllQuery();
 // arrays.arrMapConcatAllQueryDeep.mapConcatAllQueryDeep();
 // arrays.arrReducing.reducingArrays();
+// arrays.arrReducing.reducingArrays();
 // arrays.arrReducingWithPrototype.reducingArraysWithPrototype();
+arrays.arrReduceIntro();
+arrays.arrReduceArrToObject();
+// arrays.arrReduceDoubler();
 
 // Interview Studies
 // ----------------------------------------
-const priceList = prices;
-const integerList = integers;
-console.log('INTEGERLIST', integerList)
+// const integerList = integers;
+// console.log('INTEGERLIST', integerList)
 
-iQ.iQGetMaxProfit.getMaxProfit(priceList);
-iQ.iQGetProductsOfOtherNums.getProductsOfOtherNums(integerList);
+// iQ.iQGetProductsOfOtherNums.getProductsOfOtherNums(integerList);
+// iQ.iQFibonacci();
+iQ.iQGetMaxProfit(priceList);
+
+
+// BST
+// ----------------------------------------
+// to create a tree you need a node. a node in a tree looks like
+
+
