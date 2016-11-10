@@ -5,13 +5,12 @@
 // NOTE: so with that, each object is a prototype of another obj and inherits the properties defined in the prototype
 
 // NOTE: The prototype property is used primarily for inheritance;
-// you add methods and properties on a function’s prototype
-// property to make those methods and properties available to
-// instances of that function.
+// you add methods and properties on a function’s prototype property
+// to make those methods and properties available to instances of that function.
 
-// NOTE: This prototype property is not enumerable; that is, it isn’t
-// accessible in a for/in loop. But Firefox and most versions of
-// Safari and Chrome have a __proto__ “pseudo” property
+// NOTE: This prototype property is not enumerable; which means that
+// the property isn’t accessible in a for/in loop.
+// But in Firefox and most versions of Safari and Chrome, ther is a __proto__ “pseudo” property
 // (an alternative syntax) that allows you to access an object’s prototype property.
 
 

@@ -23,3 +23,15 @@ console.log(results);
 // You could sort the array and then run through it
 // and then see if the next (or previous) index is the same as the current.
 // Assuming your sort algorithm is good, this should be less than O(n2):
+
+
+
+// clone array
+// sort new array
+// create a new array for results
+// loop over each item and continue as long as the current index wont be larger than the length of the array.
+
+// check if check to see if the current index is equal to the next index, if it is, push that index to the results array.
+
+
+

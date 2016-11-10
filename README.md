@@ -1,17 +1,8 @@
-# Creational Design Patterns
+## See also
 
-* The Singleton Design Pattern
-* The Factory Design Pattern
-* The Abstract Factory Design Pattern
-* The Builder Design Pattern
-* The Builder Design Pattern 2
-* The Prototype Design Pattern
+A collection of design pattern *examples* written in JavaScript. These are meant to be used as examples for education and guides for implementing the patterns.
 
-## Difference
-
-*
-
-## Negatives
-
-*
-*
+A Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript.
+* [js-data-structures](https://github.com/gwtw/js-data-structures)
+* [js-interview-questions](https://github.com/gwtw/js-interview-questions)
+* [js-sorting](https://github.com/gwtw/js-sorting)

@@ -2,7 +2,7 @@
 import './application.scss';
 
 import * as services from './services';
-import * as arrays from './js/patterns/fundamentals/arrays';
+import * as arrays from './js/fundamentals/arrays';
 import * as iQ from './js/studies';
 import { prices } from './js/studies/data/prices';
 import { integers } from './js/studies/data/integers';

@@ -3,7 +3,7 @@
 // The initial value for our accumulator is going to be a new array.
 // All we're going to do is say accumulator.push value times two.
 // Then we need to make sure that we return the accumulator.
-export function reduceDoubler() {
+function reduceDoubler() {
   var data = [ 1, 2, 3];
 
   var dataDoubled = data.reduce(function(accumulator, value) {
@@ -15,8 +15,9 @@ export function reduceDoubler() {
   console.log('REDUCE USING .reduce() : RESULTS : ', dataDoubled);
 
 };
+reduceDoubler();
 
-export function reduceMapDoubler() {
+function reduceMapDoubler() {
   var data = [ 1, 2, 3];
 
   var dataDoubled = data.map(function(item) {
