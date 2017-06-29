@@ -1,0 +1,2 @@
+// This is an intermediate level of array coding question, its neither too easy nor too difficult. You have given an integer array and a number, you need to write a program to find all elements in array whose sum is equal to the given number. Remember, array may contain both positive and negative numbers, so your solution should consider that. Don't forget to write unit test though, even if interviewer is not asked for it, that would separate you from lot of developers. Unit testing is always expected from a professional developer.
+//

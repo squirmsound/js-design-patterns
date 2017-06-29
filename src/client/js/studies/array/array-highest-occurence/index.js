@@ -1,0 +1,1 @@
+// Get the element with the highest occurrence in an array
