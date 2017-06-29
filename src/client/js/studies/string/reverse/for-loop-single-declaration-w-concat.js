@@ -10,3 +10,8 @@ function reverse(s) {
 // Using only a single for-loops parameters, I was able to decrement through the parsed in string
 
 // And concatenate each character to a new string to return.
+function reverse(s) {
+  for (var i = s.length - 1, o = ''; i >= 0; o += s[i--]) { console.log(o);}
+
+  return o;
+}

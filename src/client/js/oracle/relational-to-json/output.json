@@ -1,0 +1,47 @@
+{
+  "id": 10,
+  "name": "Administration",
+  "location": {
+    "id": 1700,
+    "streetAddress": "2004 Charade Rd",
+    "postalCode": "98199",
+    "country": {
+      "id": "US",
+      "name": "United States of America",
+      "regionId": 2
+    }
+  },
+  "manager": {
+    "id": 200,
+    "name": "Jennifer Whalen",
+    "salary": 4400,
+    "job": {
+      "id": "AD_ASST",
+      "title": "Administration Assistant",
+      "minSalary": 3000,
+      "maxSalary": 6000
+    }
+  },
+  "employees": [
+    {
+      "id": 200,
+      "name": "Jennifer Whalen",
+      "isSenior": true,
+      "commissionPct": null,
+      "jobHistory": [
+        {
+          "id": "AD_ASST",
+          "departmentId": 90,
+          "startDate": "17-SEP-1995",
+          "endDate": "17-JUN-2001"
+        },
+        {
+          "id": "AC_ACCOUNT",
+          "departmentId": 90,
+          "startDate": "01-JUL-2002",
+          "endDate": "31-DEC-2006"
+        }
+      ]
+    }
+  ]
+}

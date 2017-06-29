@@ -3,19 +3,19 @@ import './application.scss';
 
 import * as services from './services';
 import * as arrays from './js/fundamentals/arrays';
-import * as iQ from './js/studies';
-import { prices } from './js/studies/data/prices';
-import { integers } from './js/studies/data/integers';
+// import * as iQ from './js/studies';
+import { prices } from './js/studies/lib/data/prices';
+// import { integers } from './js/studies/data/integers';
 
 
 // Playground
 // ----------------------------------------
 services.server.emitAction$('login', { username: 'foo', password: 'bar' })
-  .subscribe(user => {
-      // console.log("We're logged in: " + user);
-    }, error => {
-      console.error(error);
-    });
+.subscribe(user => {
+  // console.log("We're logged in: " + user);
+}, error => {
+  console.error(error);
+});
 
 // Send the status of the server
 services.server.status$.subscribe(
@@ -37,7 +37,7 @@ services.socket.connect();
 
 // Mock Data
 // ----------------------------------------
-const priceList = prices;
+// const priceList = prices;
 
 
 // Array Studies
@@ -49,11 +49,11 @@ arrays.arrProjectMap();
 arrays.arrForEachFilter();
 arrays.arrFilterMapChain();
 arrays.arrQueryingTrees();
-// arrays.arrMapConcatAllQuery.mapConcatAllQuery();
-// arrays.arrMapConcatAllQueryDeep.mapConcatAllQueryDeep();
-// arrays.arrReducing.reducingArrays();
-// arrays.arrReducing.reducingArrays();
-// arrays.arrReducingWithPrototype.reducingArraysWithPrototype();
+arrays.arrMapConcatAllQuery.mapConcatAllQuery();
+arrays.arrMapConcatAllQueryDeep.mapConcatAllQueryDeep();
+arrays.arrReducing.reducingArrays();
+arrays.arrReducing.reducingArrays();
+arrays.arrReducingWithPrototype.reducingArraysWithPrototype();
 arrays.arrReduceIntro();
 arrays.arrReduceArrToObject();
 // arrays.arrReduceDoubler();
