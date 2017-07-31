@@ -2,9 +2,11 @@ import Rx from 'rxjs';
 // Test helpers
 const ta_result = document.getElementById('ta_result');
 
-function emits ( who, who_ ) {
+function emits(who, who_) {
   return function(x) {
-    who.innerHTML = [who.innerHTML, who_ + " emits " + JSON.stringify(x)].join("\n");
+    who.innerHTML = [who.innerHTML, who_ + ' emits ' + JSON.stringify(x)].join(
+      '\n'
+    );
   };
 }
 
@@ -13,7 +15,7 @@ const blogPosts = [
   { user: 2, msg: 'Hi' },
   { user: 2, msg: 'How are you?' },
   { user: 1, msg: 'Hello' },
-  { user: 1, msg: 'Good' },
+  { user: 1, msg: 'Good' }
 ];
 
 // Auxiliary functions
@@ -34,33 +36,43 @@ function isPrevClick(ev) {
 }
 
 // Core
-const prevClicks = Rx.Observable
-  .fromEvent(document.getElementById('prev'), 'click');
-const nextClicks = Rx.Observable
-  .fromEvent(document.getElementById('next'), 'click');
+const prevClicks = Rx.Observable.fromEvent(
+  document.getElementById('prev'),
+  'click'
+);
+const nextClicks = Rx.Observable.fromEvent(
+  document.getElementById('next'),
+  'click'
+);
 
 const blogPosts$ = Rx.Observable.just(blogPosts);
-const index$ = Rx.Observable.merge(nextClicks, prevClicks).
-  withLatestFrom(blogPosts$, (ev, blogPosts) => {
-               return { posts: blogPosts, ev: ev };
-             }).
-             tap(x => { console.log(x.ev.target.id) }).
-             scan((index, posts_and_ev) => {
-                     return isNextClick(posts_and_ev.ev) && isNextable(posts_and_ev.posts, index) ?
-                     index + 1 : isPrevClick(posts_and_ev.ev) && isPrevable(posts_and_ev.posts, index) ? index - 1
-                           :index
-                   }, 0);
 
-const currentPost$ = index$.
-  withLatestFrom(blogPosts$, (index, blogPost) => {
-    return blogPost[index]; }).
-      startWith(blogPosts[0]).
-      do(emits(ta_result, 'blog post :'));
+const index$ = Rx.Observable
+  .merge(nextClicks, prevClicks)
+  .withLatestFrom(blogPosts$, (ev, blogPosts) => {
+    return { posts: blogPosts, ev: ev };
+  })
+  .tap(x => {
+    console.log(x.ev.target.id);
+  })
+  .scan((index, posts_and_ev) => {
+    return isNextClick(posts_and_ev.ev) && isNextable(posts_and_ev.posts, index)
+      ? index + 1
+      : isPrevClick(posts_and_ev.ev) && isPrevable(posts_and_ev.posts, index)
+        ? index - 1
+        : index;
+  }, 0);
 
-const postNextable = index$.
-  withLatestFrom(blogPosts$, (index, blogPost) => {
-    return isNextable(blogPost, index);
-  });
+const currentPost$ = index$
+  .withLatestFrom(blogPosts$, (index, blogPost) => {
+    return blogPost[index];
+  })
+  .startWith(blogPosts[0])
+  .do(emits(ta_result, 'blog post :'));
+
+const postNextable = index$.withLatestFrom(blogPosts$, (index, blogPost) => {
+  return isNextable(blogPost, index);
+});
 
 const postPrevable = index$.withLatestFrom(blogPosts$, (index, blogPost) => {
   return isNextable(blogPost, index);
